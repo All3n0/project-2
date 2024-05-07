@@ -5,16 +5,17 @@ function ProductCard(){
     const params=useParams()
     const productId=params.id
     const [isDeleted,setIsDeleted]=useState(false)
+    const [isAdded,setIsAdded]=useState(false)
 
     useEffect(()=>{
-        fetch(`https://fakestoreapi.com/products/${productId}`)
+        fetch(`https://api.escuelajs.co/api/v1/products/${productId}`)
         .then(r=>r.json())
         .then(data=>setproduct(data))
         .catch(error=>console.error(error));
     },[productId])
     
     function handleDelete(){
-        fetch(`https://fakestoreapi.com/products/${productId}`,{
+        fetch(`https://api.escuelajs.co/api/v1/products/${productId}`,{
             method:"DELETE",
         })
         .then((response)=>{
@@ -28,10 +29,13 @@ function ProductCard(){
     if (isDeleted){
         window.location.href='/products'
     }
+    function handleAdd(){
+        fetch(`https://api.escuelajs.co/api/v1/products${productId}`)
+    }
     return(
         <div id="product-container">
             <div id="product-image">
-                <img src={product.image} alt="image" />
+                <img src={product.images[1]} alt="image" />
             </div>
             <div id="product-details">
                 <h2>{product.title}</h2>
