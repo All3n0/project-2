@@ -1,4 +1,3 @@
-// Checkout.js
 import React from 'react';
 
 const Checkout = ({ cartItems }) => {
