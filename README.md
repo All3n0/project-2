@@ -3,9 +3,9 @@
 An online store that shows items by name and price.
 
 # Core Features
-Search
-Add to Cart
-Delete from Cart
+1. Search
+2. Add to Cart
+3. Delete from Cart
 
 # User Story 
 As a user, you're able to:
